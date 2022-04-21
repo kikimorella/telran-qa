@@ -3,7 +3,7 @@ package d220317;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class Page { // этот класс для Selenium - базовый, который позволяет инициализировать драйвер и элементы
+public abstract class Page { // этот класс - базовый, который позволяет инициализировать драйвер и элементы
 
     protected WebDriver driver;
 
