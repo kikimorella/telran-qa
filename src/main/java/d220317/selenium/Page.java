@@ -1,4 +1,4 @@
-package d220317;
+package d220317.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

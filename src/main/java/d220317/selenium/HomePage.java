@@ -1,11 +1,8 @@
-package d220317;
+package d220317.selenium;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.sql.Driver;
 
 public class HomePage extends Page { // PageFactory
     public HomePage(WebDriver driver) { // конструктор

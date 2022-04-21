@@ -1,6 +1,5 @@
-package d220317;
+package d220317.selenium;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
