@@ -23,7 +23,7 @@ public class LoginSteps {
     @When("I click on the Login icon")
     public void iClickOnLoginIcon() {
         homePage = page(HomeP.class);
-        loginPage = homePage.clickLoginIcon();
+        loginPage = homePage.clickLoginIcon(LoginP.class);
     }
 
     @Then("I see Login page")
@@ -39,7 +39,7 @@ public class LoginSteps {
 
     @When("I click on Login button")
     public void iClickLoginButton() {
-        loginPage.clickLoginBtn();
+        homePage = loginPage.clickLoginBtn();
     }
 
     @When("I insert invalid user credentials") // мы добавили новый шаг

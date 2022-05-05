@@ -18,11 +18,11 @@ public class LoginTest extends HeaderMenu{
     public void LoginLogoutTest() {
         homePage = open(basicURL, HomePage.class);
         homePage.clickAcceptCookies(); // теперь не будет всплывающего окна
-        loginPage = homePage.clickLoginBtn(LoginPage.class);
+        loginPage = homePage.clickLoginIcon(LoginPage.class);
         loginPage.fillCred(validEmail, validPwd);
         homePage = loginPage.clickOnLoginBtn(); // мы фиксируем изменения
         homePage.checkIconText(kontoText); // мы проверяем изменение текста иконки
-        kontoPage = homePage.clickLoginBtn(KontoPage.class);
+        kontoPage = homePage.clickLoginIcon(KontoPage.class);
         kontoPage.checkGreetingsText();
         loginPage = kontoPage.clickOnLogout(); // и тут мы поняли, что что-то нужно менять
         loginPage.checkIconText(anmeldenText);

@@ -1,25 +1,9 @@
 Feature: Customer Account Wishlist page Tests
 
-  # Homework
     Scenario: Customer Account Wishlist displays list of items
-        Given I am logged in
-        And I am on the Homepage
-
-        When I click on Sofa
-        Then I see Sofas page
-
-        When I click on Wishlist icon of the product
-        Then I see Wishlist icon is activated
-
-        When I click on the Login icon
-        Then I should be logged in
-
+        Given I am on Customer Account Page
         When I click on Ihre Wunschliste
-        Then I see added item
-
-    Scenario: Customer Account Wishlist displays list of items
-        Given I am logged in
-        And I am on the Homepage
+        Then I see empty Wishlist
 
         When I click on Sofa
         Then I see Sofas page
@@ -27,6 +11,28 @@ Feature: Customer Account Wishlist page Tests
         When I click on Wishlist icon of the product
         Then I see Wishlist icon is activated
         And I see added item in Merkliste
+
+        When I click on the Login icon
+        Then I should be logged in
+
+        When I click on Ihre Wunschliste
+        Then I see added item
+
+  # Homework  + новый сценарий
+
+#        When I remove the item
+#        Then I make sure item is removed
+#
+#    Scenario: Customer Account Wishlist displays list of items
+#        Given I am logged in
+#        And I am on the Homepage
+#
+#        When I click on Sofa
+#        Then I see Sofas page
+#
+#        When I click on Wishlist icon of the product
+#        Then I see Wishlist icon is activated
+#        And I see added item in Merkliste
 
 #    Scenario: Search for the item on CA Wishlist
 #        Given I am logged in as user with 5 wishlist items

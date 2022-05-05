@@ -10,7 +10,7 @@ import java.util.Properties;
  */
 public class PropertiesLoader {
 
-    private static final String PROP_FILE = "/test.properties";
+    private static final String PROP_FILE = "/sconto_test.properties";
 
     private PropertiesLoader() {
     }

@@ -2,10 +2,11 @@ package cucumber.sconto.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import selenide.sconto.HeaderMenu;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class FurnitureP {
+public class FurnitureP extends HeaderMenu {
 
     /* Elements */
 

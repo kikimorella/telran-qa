@@ -18,7 +18,7 @@ Feature: Sconto Login Feature
         Then I see Login page
         Then I should see icon text Anmelden
 
-# Unsuccessful Login запускается только если вырезать Successful Login. Почему? Как исправить? //TODO
+# Unsuccessful Login запускается только если вырезать Successful Login. Почему? Как исправить? Возможно, стоит добавить шаг -> выйти... //TODO
 
     Scenario: Unsuccessful Login
         Given I am on the Homepage

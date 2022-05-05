@@ -1,12 +1,14 @@
 package cucumber.sconto.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import d220407.sconto.util.PropertiesLoader;
+import cucumber.sconto.util.PropertiesLoader;
 import org.openqa.selenium.By;
+import selenide.sconto.HeaderMenu;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class LoginP {
+public class LoginP extends HeaderMenu {
 
     /* Properties */
     private static String validEmail = PropertiesLoader.loadProperty("valid.email");
@@ -26,8 +28,9 @@ public class LoginP {
         $(pwdInput).setValue(validPwd);
     }
 
-    public void clickLoginBtn() {
+    public HomeP clickLoginBtn() {
         $(loginBtn).click();
+        return Selenide.page(HomeP.class);
     }
 
     public SelenideElement loginPageHeader() {
