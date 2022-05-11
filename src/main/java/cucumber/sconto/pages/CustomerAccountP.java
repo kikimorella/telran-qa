@@ -30,4 +30,9 @@ public class CustomerAccountP extends HeaderMenu {
         $(wishlist).click();
         return page(WishlistP.class);
     }
+
+    public PersonalInfoP clickOnPersonalInfoInKundenkontoMenu() {
+        $(data).click();
+        return page(PersonalInfoP.class);
+    }
 }

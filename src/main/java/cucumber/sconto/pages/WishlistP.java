@@ -13,10 +13,14 @@ public class WishlistP extends HeaderMenu {
     private static By itemInWishlist = By.cssSelector(".wishlistEntry");
     private static By wishlistEntries = By.className("wishlistEntry");
     private static By textUnderTheItem = By.cssSelector(".wishlistEntry__articleAddToWishlistInformation--hiddenInS");
+    private static By closeIcon = By.cssSelector(".closeIcon");
     // textUnderTheItem - мы можем делать проверку наличия списка добавленных элементов теперь другим способом
 
     public SelenideElement listHasAnItem() {
         return $(textUnderTheItem);
+    }
+    public void clickToRemoveTheItem() {
+        $(closeIcon).click();
     }
 
     public ElementsCollection wishlistItems() {
