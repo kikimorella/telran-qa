@@ -19,10 +19,10 @@ Feature: Customer Account Wishlist page Tests
         Then I see added item
 
   # Homework  + новый сценарий
+        When I remove the item
+        Then I see empty Wishlist
+        # Then I make sure item is removed
 
-#        When I remove the item
-#        Then I make sure item is removed
-#
 #    Scenario: Customer Account Wishlist displays list of items
 #        Given I am logged in
 #        And I am on the Homepage

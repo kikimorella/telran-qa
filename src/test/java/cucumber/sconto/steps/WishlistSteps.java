@@ -28,4 +28,9 @@ public class WishlistSteps {
         wishlistPage.clickOnFurniture();
     }
 
+    @When("I remove the item")
+    public void removeTheItem() {
+        wishlistPage.clickToRemoveTheItem();
+    }
+
 }

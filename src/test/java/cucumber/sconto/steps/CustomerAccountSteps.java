@@ -2,10 +2,7 @@ package cucumber.sconto.steps;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import cucumber.sconto.pages.CustomerAccountP;
-import cucumber.sconto.pages.HomeP;
-import cucumber.sconto.pages.LoginP;
-import cucumber.sconto.pages.WishlistP;
+import cucumber.sconto.pages.*;
 import cucumber.sconto.util.Helper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,6 +22,7 @@ public class CustomerAccountSteps {
     LoginP loginPage;
     HomeP homePage;
     WishlistP wishlistPage;
+    PersonalInfoP personalInfoPage;
 
     @Then("I should be logged in")
     public void shouldBeLoggedIn() {
@@ -50,5 +48,10 @@ public class CustomerAccountSteps {
     @When("I click on Ihre Wunschliste")
     public void clickOnWishlist() {
         wishlistPage = customerAccountPage.clickOnWishlistInKundenkontoMenu();
+    }
+
+    @When("I click on Ihre Kundendata")
+    public void clickOnData() {
+        personalInfoPage = customerAccountPage.clickOnPersonalInfoInKundenkontoMenu();
     }
 }
