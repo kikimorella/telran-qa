@@ -23,9 +23,9 @@ public class WishlistSteps {
         wishlistPage.wishlistItems().shouldBe(empty); //!!!
     }
 
-    @When("I click on Sofa") // @When("I click on {}") - если настроить навигацию мебели
-    public void iClickOnHeaderMenuNavigation() {
-        wishlistPage.clickOnFurniture();
+    @When("I click on {} menu") // @When("I click on {}") - если настроить навигацию мебели
+    public void iClickOnHeaderMenuNavigation(String menuName) {
+        wishlistPage.clickOnFurniture(menuName);
     }
 
     @When("I remove the item")

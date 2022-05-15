@@ -49,9 +49,10 @@ public class CustomerAccountSteps {
     public void clickOnWishlist() {
         wishlistPage = customerAccountPage.clickOnWishlistInKundenkontoMenu();
     }
-
+/*
     @When("I click on Ihre Kundendata")
     public void clickOnData() {
         personalInfoPage = customerAccountPage.clickOnPersonalInfoInKundenkontoMenu();
     }
+ */
 }

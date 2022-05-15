@@ -1,5 +1,6 @@
 package cucumber.sconto.util;
 
+import com.codeborne.selenide.WebDriverRunner;
 import cucumber.sconto.util.PropertiesLoader;
 import org.openqa.selenium.By;
 
@@ -15,7 +16,8 @@ public class Helper {
     public static String loginURL = basicURL + "/login"; // 0_0 - concatenation!!!
 
 
-    public static void acceptCookies(){
+    public static void acceptCookies() {
         $(acceptBtn).click();
+        WebDriverRunner.getWebDriver().manage().window().maximize(); // развернуть полный экран
     }
 }

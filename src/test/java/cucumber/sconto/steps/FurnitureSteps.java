@@ -8,23 +8,26 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.Condition.text;
+
 public class FurnitureSteps {
 
     FurnitureP furniturePage = new FurnitureP();
 
-    @Then("I see Sofas page")
-    public void iSeeFurniturePage() {
-           furniturePage.furnitureHeader().should(Condition.exist);
+    @Then("I see {} page")
+    public void iSeeFurniturePage(String pageName) {
+        furniturePage.furnitureHeader().shouldHave(text(pageName));
     }
 
-    @When("I click on Wishlist icon of the product")
-    public void iClickOnWischlistIcon() {
-        furniturePage.clickOn();
+    @When("I add {} item(s) to Wishlist")
+    public void iClickOnWischlistIcon(Integer item) {
+        furniturePage.addItemToWishlist(item);
     }
 
-    @Then("I see Wishlist icon is activated")
-    public void wishlistIconActivated() {
-        furniturePage.activeWishlistIcon();
+    @Then("I see Wishlist icon is activated for {} item(s)")
+    public void wishlistIconActivated(Integer wishlistItems) {
+        furniturePage.activatedWishListIcon().shouldBe(size(wishlistItems));
     }
 
     @Then("I see added item in Merkliste")
