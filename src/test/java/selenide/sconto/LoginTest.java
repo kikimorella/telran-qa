@@ -8,7 +8,7 @@ import static selenide.sconto.LoginPage.validEmail;
 import static selenide.sconto.LoginPage.validPwd;
 
 
-public class LoginTest extends HeaderMenu{
+public class LoginTest extends HeaderMenu {
 
     HomePage homePage; // эту часть мы выносим для упрощения написания других тестов
     LoginPage loginPage;

@@ -28,9 +28,9 @@ public class WishlistSteps {
         wishlistPage.clickOnFurniture(menuName);
     }
 
-    @When("I remove the item")
-    public void removeTheItem() {
-        wishlistPage.clickToRemoveTheItem();
+    @When("I remove {} item")
+    public void removeItem(Integer item) {
+        wishlistPage.clickToRemoveItem(item);
     }
 
 }

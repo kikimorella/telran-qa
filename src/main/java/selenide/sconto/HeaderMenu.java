@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class HeaderMenu {
 
-    /* Properties */
+    /* Properties from the properties file*/
     public static String kontoText = PropertiesLoader.loadProperty("konto.text");
     public static String anmeldenText = PropertiesLoader.loadProperty("anmelden.text");
 

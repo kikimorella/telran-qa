@@ -19,8 +19,12 @@ public class WishlistP extends HeaderMenu {
     public SelenideElement listHasAnItem() {
         return $(textUnderTheItem);
     }
-    public void clickToRemoveTheItem() {
-        $(closeIcon).click();
+
+    public void clickToRemoveItem(int itemAmount) {
+//        $(closeIcon).click(); // если удалять 1 элемент
+        for (int i = itemAmount; i > 0; i--) {
+            $(closeIcon).click();
+        }
     }
 
     public ElementsCollection wishlistItems() {

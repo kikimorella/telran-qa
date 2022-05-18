@@ -1,15 +1,20 @@
 Feature: Customer Account Wishlist page Tests
 
-    Scenario Outline: Customer Account Wishlist displays list of items
+#    Scenario Outline: Customer Account Wishlist displays list of items
+    Scenario: Customer Account Wishlist displays list of items
         Given I am on Customer Account Page
         When I click on Ihre Wunschliste
         Then I see empty Wishlist
 
-        When I click on <menu> menu
-        Then I see <menu> page
+#        When I click on <menu> menu
+#        Then I see <menu> page
+         When I click on Sofas menu
+         Then I see Sofas page
 
-        When I add <itemAmount> item to Wishlist
-        Then I click on Wishlist icon is activated fot <itemAmount> item
+#        When I add <itemAmount> item to Wishlist
+#        Then I see Wishlist icon is activated for <itemAmount> item
+        When I add 1 item to Wishlist
+        Then I see Wishlist icon is activated for 1 item
         And I see added item in Merkliste
 
         When I click on the Login icon
@@ -18,9 +23,14 @@ Feature: Customer Account Wishlist page Tests
         When I click on Ihre Wunschliste
         Then I see added item
 
-  # Homework  + новый сценарий
-        When I remove <itemAmount> item
+#        When I remove <itemAmount> item
+        When I remove 1 item
         Then I see empty Wishlist
+
+#        Examples: Credentials
+#            | menu   | itemAmount |
+#            | Betten | 1          |
+#            | Sofas  | 3          |
 
 #    Scenario: Customer Account Wishlist displays list of items
 #        Given I am logged in
@@ -59,20 +69,17 @@ Feature: Customer Account Wishlist page Tests
 #        When I click on cross on Sofa item
 #        Then I see less items in Wishlist
 
+
+
 #        Пример использования таблицы в сценарии
 
 #        When I insert user name <username>
 #        And I inser Password <password>
 #        And I click on Login button
 #        And I see error message
-        """
+    """
         <text>
         """
-
-        Examples:
-            | menu   | itemAmount
-            | Betten | 1
-      #      | Sofas  |3
 
 #        Examples:
 #        | username       | password | text

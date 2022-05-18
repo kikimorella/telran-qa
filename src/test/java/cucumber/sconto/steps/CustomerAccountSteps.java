@@ -41,6 +41,7 @@ public class CustomerAccountSteps {
         Helper.acceptCookies();
         loginPage.validLoginInput();
         homePage = loginPage.clickLoginBtn();
+        homePage.checkIconText("Mein Konto");
         customerAccountPage = homePage.clickLoginIcon(CustomerAccountP.class);
         shouldBeLoggedIn();
     }
@@ -49,10 +50,9 @@ public class CustomerAccountSteps {
     public void clickOnWishlist() {
         wishlistPage = customerAccountPage.clickOnWishlistInKundenkontoMenu();
     }
-/*
+
     @When("I click on Ihre Kundendata")
     public void clickOnData() {
         personalInfoPage = customerAccountPage.clickOnPersonalInfoInKundenkontoMenu();
     }
- */
 }

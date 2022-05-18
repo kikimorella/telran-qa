@@ -26,7 +26,7 @@ public class LoginSteps {
         loginPage = homePage.clickLoginIcon(LoginP.class);
     }
 
-    @Then("I see Login page")
+    @Then("I see LoginPage")
     public void iSeeLoginPage() {
         loginPage.loginPageHeader().should(Condition.exist);
         loginPage.loginPageHeader().shouldHave(text("Anmelden"));

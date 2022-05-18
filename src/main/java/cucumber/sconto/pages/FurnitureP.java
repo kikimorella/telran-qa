@@ -23,13 +23,15 @@ public class FurnitureP extends HeaderMenu {
     public void addItemToWishlist(int itemAmount) {
         int[] tiles = {1, 2, 4, 5};
         for (int i = 0; i <= itemAmount - 1; i++) {
-            By wishlistIconItem = By.xpath("//*[@data-tile-position='" + tiles[i] + "']/*/*/*[contains(@class, 'wishlistIcon')]");
+            By wishlistIconItem = By.xpath("//*[@data-tile-position='" + tiles[i] + "']/*/*/*[contains(@class, 'wishlistIcon')]");  // 1-е пустое сердечко
             $(wishlistIconItem).hover();
             $(wishlistIconItem).click();
         }
     }
 
-    public ElementsCollection activatedWishListIcon(){
+//    public void activeWishlistIcon() { $(wishlistIconFirstItem).hover(); }
+
+    public ElementsCollection activatedWishListIcon() {
         return $$(filledWishlistIcon);
     }
 }
