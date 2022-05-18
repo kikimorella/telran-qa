@@ -9,13 +9,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class PersonalInfoP {
 
-    String name;
-
-    private static By ihreKundendatenText = By.cssSelector(".customerData > .customerData__title > .titleHeadline");
-    private static By ihrePersönlichenDatenText = By.cssSelector(".accordion__header:nth-child(1) .customerData__headerText");
-    private static By detailsAnzeigenBtn = By.cssSelector(".customerData__collapseItem");
+    private static By ihreKundendatenText = By.cssSelector(".titleHeadline");
+    private static By ihrePersönlichenDatenText = By.cssSelector(".accordion__header:nth-child(1) .customerData__headerText"); // "customerData__headerText" на странице 4 шт.
+    private static By detailsAnzeigenBtn = By.cssSelector(".accordion__header:nth-child(1) .customerData__collapseItem"); // "customerData__collapseItem" на странице 4 шт.
     private static By editBtn = By.id(".personalBtn");
     private static By firstName = By.id(".firstName");
+    private static By lastName = By.id(".lastName");
     private static By saveBtn = By.id(".submitPersonalData");
     private static By fullName = By.id(".fullName");
 
@@ -32,15 +31,32 @@ public class PersonalInfoP {
         $(editBtn).click();
     }
 
-    public void editName() {
+    public void editName(String name) {
         $(firstName).setValue(name);
+    }
+
+    public void editLastname(String surname) {
+        $(lastName).setValue(surname);
     }
 
     public void clickSaveBtn() {
         $(saveBtn).click();
     }
 
-    public void checkTheName() {
+    public void checkTheName(String name) {
         $(fullName).shouldHave(text(name));
+    }
+
+    public void checkTheLastname(String surname) {
+        $(fullName).shouldHave(text(surname));
+    }
+
+    public void backToNormal() {
+        clickOnDataDetails();
+        clickOnDataEdit();
+        $(firstName).setValue("Violetta");
+        $(lastName).setValue("Abramova");
+        clickSaveBtn();
+        $(fullName).shouldHave(text("Violetta Abramova"));
     }
 }

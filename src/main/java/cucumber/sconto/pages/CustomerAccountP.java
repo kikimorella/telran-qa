@@ -15,7 +15,7 @@ public class CustomerAccountP extends HeaderMenu {
 
     private static By wishlist = By.cssSelector(".sidebarNavigation__item:nth-child(3)");
     private static By orders = By.cssSelector(".sidebarNavigation__secondLevelCategoryName__text--Ihre Bestellungen");
-    private static By data = By.linkText("Ihre Kundendaten");
+    private static By data = By.linkText("Ihre Kundendaten"); // надеюсь найдет
 
     public SelenideElement accountTitle() {
         return $(title);
