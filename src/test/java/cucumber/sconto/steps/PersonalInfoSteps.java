@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
 
 public class PersonalInfoSteps {
     PersonalInfoP personalInfoPage;
@@ -28,8 +29,13 @@ public class PersonalInfoSteps {
     }
 
     @And("I change customer name to {}")
-    public void nameChange() {
-        personalInfoPage.editName();
+    public void nameChange(String name) {
+        personalInfoPage.editName(name);
+    }
+
+    @And("I change customer lastname to {}")
+    public void lastnameChange(String surname) {
+        personalInfoPage.editLastname(surname);
     }
 
     @And("I click Save button")
@@ -38,7 +44,13 @@ public class PersonalInfoSteps {
     }
 
     @Then("I see customer name {}")
-    public void checkTheName() {
-        personalInfoPage.checkTheName();
+    public void checkTheName(String name, String surname) {
+        personalInfoPage.checkTheName(name);
+        personalInfoPage.checkTheLastname(surname);
+    }
+
+    @When ("I return everything back")
+    public void backToNormal() {
+        personalInfoPage.backToNormal();
     }
 }
