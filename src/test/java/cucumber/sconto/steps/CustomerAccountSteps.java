@@ -68,7 +68,7 @@ public class CustomerAccountSteps {
         shouldBeLoggedIn();
     }
 
-    @When("I click on Ihre persönlichen Daten")
+    @When("I expand on Ihre persönlichen Daten")
     public void clickODataDetails() {
         kundenDatenPage.clickOnPersonDataDetails();
     }

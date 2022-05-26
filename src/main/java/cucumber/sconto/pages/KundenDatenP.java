@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class KundenDatenP {
 
-    private static By ihreKundendatenHeader = By.xpath("//*[@class='titleHeadline'"); // но их 2
-    private static By persönlichenDatenDropdown = By.cssSelector("//*contains(text(),'persönlichen')]/following-sibling::div");
+    private static By ihreKundendatenHeader = By.xpath("//*[@class='titleHeadline']"); // но их 2
+    private static By persönlichenDatenDropdown = By.xpath("//*[contains(text(),'persönlichen')]/following-sibling::div");
     // "содержит текст и клик на следующего брата этого элемента", нам не подходил "customerData__headerText" на странице 4 шт.
     private static By editBtn = By.id(".personalBtn");
     private static By saveBtn = By.id(".submitPersonalData");

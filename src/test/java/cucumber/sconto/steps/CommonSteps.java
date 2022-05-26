@@ -16,7 +16,7 @@ public class CommonSteps {
         if (pageName.contains("Ihre Kundendaten")) {
             kundenDatenPage.getKundendatenHeader().shouldHave(text(pageName)); // shouldHave - говорит, что у локатора должен быть соответствующий текст
 //            kundenDatenPage.getHeader().shouldHave(text("Ihre Kundendaten")); // конкретное значение, просто Kundendaten бы не нашёлся
-//            String text = kundenDatenPage.getHeader().getText(); // мы вытягиваем текст
+//            String text = kundenDatenPage.getHeader().getText(); // мы вытягиваем текст (1:52 на видео уроке
 //            System.out.println(text); // метод, который мы использовали, чтоб найти элемент по локатору
         } else {
             furniturePage.furnitureHeader().shouldHave(text(pageName));

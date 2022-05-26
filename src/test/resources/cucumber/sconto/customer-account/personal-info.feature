@@ -4,9 +4,9 @@ Feature: Customer Account Personal Info page Tests
         Given I am on Customer Account Page
 
         When I click on Ihre Kundendata
-        Then I see Kundendaten page
+        Then I see Ihre Kundendaten page
 
-        When I click on Ihre persönlichen Daten
+        When I expand on Ihre persönlichen Daten
         When I click on Edit button
         Then I see Ihre persönlichen Daten edit form
 
