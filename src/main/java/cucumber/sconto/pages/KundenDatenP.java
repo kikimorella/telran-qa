@@ -17,7 +17,7 @@ public class KundenDatenP {
     private static By lastName = By.id(".lastName");
     private static By fullName = By.id(".fullName");
 
-    public SelenideElement getHeader() {
+    public SelenideElement getKundendatenHeader() {
         return $(ihreKundendatenHeader);
     }
 

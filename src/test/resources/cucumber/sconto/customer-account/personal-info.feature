@@ -4,7 +4,7 @@ Feature: Customer Account Personal Info page Tests
         Given I am on Customer Account Page
 
         When I click on Ihre Kundendata
-        Then I see Data page
+        Then I see Kundendaten page
 
         When I click on Ihre persönlichen Daten
         When I click on Edit button
@@ -17,10 +17,11 @@ Feature: Customer Account Personal Info page Tests
 
         When I return everything back
 #        When I click on Ihre persönlichen Daten
-#        And I click on Edit button
-#        And I change customer name to Violeta
-#        And I click Save button
+#        Then I click on Edit button
+#        Then I change customer name to Violeta
+#        Then I click Save button
 #        Then I see customer name Violeta
+#        Then I logout?
 
         Examples:
            | name   |  surname |

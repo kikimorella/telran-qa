@@ -6,12 +6,12 @@ import selenide.sconto.HeaderMenu;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
-import static cucumber.sconto.util.Helper.ihreKundendatenMenu;
 
 public class CustomerAccountP extends HeaderMenu {
 
     /* Elements */
     private static By title = By.cssSelector(".titleHeadline");
+    private static By ihreKundendatenMenu = By.linkText("Ihre Kundendaten");
     private static final By logout = By.xpath("//a[contains(@href, '/bestellung/logout')]");
 
     private static By wishlist = By.cssSelector(".sidebarNavigation__item:nth-child(3)");

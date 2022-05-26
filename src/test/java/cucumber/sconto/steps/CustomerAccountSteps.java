@@ -53,7 +53,7 @@ public class CustomerAccountSteps {
     }
 
     @When("I click on Ihre Kundendata")
-    public void clickOnData() {
+    public void clickOnDataMenu() {
         kundenDatenPage = customerAccountPage.clickOnIhreKundenDatenMenu();
     }
 

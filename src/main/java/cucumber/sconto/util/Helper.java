@@ -15,7 +15,7 @@ public class Helper {
     public static String loginURL = basicURL + "/login"; // 0_0 - concatenation!!!
 
     /* Kunden Konto Menu */
-    public static By ihreKundendatenMenu = By.linkText("Iren Kundendaten");
+    public static By ihreKundendatenMenu = By.linkText("Ihre Kundendaten");
     // xpath можно сикать через дерево элементов и Ctrl+F
 
     public static void acceptCookies() {
