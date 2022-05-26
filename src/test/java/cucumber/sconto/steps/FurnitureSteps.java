@@ -15,11 +15,6 @@ public class FurnitureSteps {
 
     FurnitureP furniturePage = new FurnitureP();
 
-    @Then("I see {} page")
-    public void iSeeFurniturePage(String pageName) {
-        furniturePage.furnitureHeader().shouldHave(text(pageName));
-    }
-
     @When("I add {} item(s) to Wishlist")
     public void iClickOnWischlistIcon(Integer item) {
         furniturePage.addItemToWishlist(item);

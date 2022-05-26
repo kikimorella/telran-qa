@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import cucumber.sconto.pages.*;
 import cucumber.sconto.util.Helper;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +23,7 @@ public class CustomerAccountSteps {
     LoginP loginPage;
     HomeP homePage;
     WishlistP wishlistPage;
-    PersonalInfoP personalInfoPage;
+    KundenDatenP kundenDatenPage;
 
     @Then("I should be logged in")
     public void shouldBeLoggedIn() {
@@ -35,8 +36,29 @@ public class CustomerAccountSteps {
         loginPage = customerAccountPage.clickOnLogout();
     }
 
+//    @Given("I am on Customer Account Page") // мы комментируем шаг, который работает для другого сценария
+//    public void iAmLoggedIn() {
+//        loginPage = Selenide.open(Helper.loginURL, LoginP.class);
+//        Helper.acceptCookies();
+//        loginPage.validLoginInput();
+//        homePage = loginPage.clickLoginBtn();
+//        homePage.checkIconText("Mein Konto");
+//        customerAccountPage = homePage.clickLoginIcon(CustomerAccountP.class);
+//        shouldBeLoggedIn();
+//    }
+
+    @When("I click on Ihre Wunschliste")
+    public void clickOnWishlist() {
+        wishlistPage = customerAccountPage.clickOnWishlistInKundenkontoMenu();
+    }
+
+    @When("I click on Ihre Kundendata")
+    public void clickOnData() {
+        kundenDatenPage = customerAccountPage.clickOnIhreKundenDatenMenu();
+    }
+
     @Given("I am on Customer Account Page")
-    public void iAmLoggedIn() {
+    public void iAmOnCustomerAccountPage() {
         loginPage = Selenide.open(Helper.loginURL, LoginP.class);
         Helper.acceptCookies();
         loginPage.validLoginInput();
@@ -46,13 +68,18 @@ public class CustomerAccountSteps {
         shouldBeLoggedIn();
     }
 
-    @When("I click on Ihre Wunschliste")
-    public void clickOnWishlist() {
-        wishlistPage = customerAccountPage.clickOnWishlistInKundenkontoMenu();
+    @When("I click on Ihre persönlichen Daten")
+    public void clickODataDetails() {
+        kundenDatenPage.clickOnPersonDataDetails();
     }
 
-    @When("I click on Ihre Kundendata")
-    public void clickOnData() {
-        personalInfoPage = customerAccountPage.clickOnPersonalInfoInKundenkontoMenu();
+    @When("I click on Edit button")
+    public void clickOnEditBtn() {
+        kundenDatenPage.clickOnDataEditBtn();
+    }
+
+    @Then("I see Ihre persönlichen Daten edit form")
+    public void iSeeIhrePersönlichenDatenEditForm() {
+        kundenDatenPage.getSaveBtn().should(Condition.exist);
     }
 }

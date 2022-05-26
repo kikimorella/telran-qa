@@ -14,6 +14,9 @@ public class Helper {
     public static String basicURL = PropertiesLoader.loadProperty("url");
     public static String loginURL = basicURL + "/login"; // 0_0 - concatenation!!!
 
+    /* Kunden Konto Menu */
+    public static By ihreKundendatenMenu = By.linkText("Iren Kundendaten");
+    // xpath можно сикать через дерево элементов и Ctrl+F
 
     public static void acceptCookies() {
         $(acceptBtn).click();

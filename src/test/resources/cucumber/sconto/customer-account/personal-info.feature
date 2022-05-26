@@ -7,10 +7,12 @@ Feature: Customer Account Personal Info page Tests
         Then I see Data page
 
         When I click on Ihre persönlichen Daten
-        And I click on Edit button
-        And I change customer name to <name>
-        And I change customer lastname to <surname>
-        And I click Save button
+        When I click on Edit button
+        Then I see Ihre persönlichen Daten edit form
+
+        When I change customer name to <name>
+        When I change customer lastname to <surname>
+        When I click Save button
         Then I see customer name <name> <surname>
 
         When I return everything back

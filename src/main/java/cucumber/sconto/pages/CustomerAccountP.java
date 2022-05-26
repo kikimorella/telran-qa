@@ -6,6 +6,7 @@ import selenide.sconto.HeaderMenu;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.page;
+import static cucumber.sconto.util.Helper.ihreKundendatenMenu;
 
 public class CustomerAccountP extends HeaderMenu {
 
@@ -15,7 +16,7 @@ public class CustomerAccountP extends HeaderMenu {
 
     private static By wishlist = By.cssSelector(".sidebarNavigation__item:nth-child(3)");
     private static By orders = By.cssSelector(".sidebarNavigation__secondLevelCategoryName__text--Ihre Bestellungen");
-    private static By data = By.linkText("Ihre Kundendaten"); // надеюсь найдет
+//    private static By data = By.linkText("Ihre Kundendaten"); // перенесли в Helper
 
     public SelenideElement accountTitle() {
         return $(title);
@@ -31,8 +32,8 @@ public class CustomerAccountP extends HeaderMenu {
         return page(WishlistP.class);
     }
 
-    public PersonalInfoP clickOnPersonalInfoInKundenkontoMenu() {
-        $(data).click();
-        return page(PersonalInfoP.class);
+    public KundenDatenP clickOnIhreKundenDatenMenu() {
+        $(ihreKundendatenMenu).click();
+        return page(KundenDatenP.class);
     }
 }

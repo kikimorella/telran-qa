@@ -1,34 +1,36 @@
 package cucumber.sconto.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
-public class PersonalInfoP {
+public class KundenDatenP {
 
-    private static By ihreKundendatenText = By.cssSelector(".titleHeadline");
-    private static By ihrePersönlichenDatenText = By.cssSelector(".accordion__header:nth-child(1) .customerData__headerText"); // "customerData__headerText" на странице 4 шт.
-    private static By detailsAnzeigenBtn = By.cssSelector(".accordion__header:nth-child(1) .customerData__collapseItem"); // "customerData__collapseItem" на странице 4 шт.
+    private static By ihreKundendatenHeader = By.xpath("//*[@class='titleHeadline'"); // но их 2
+    private static By persönlichenDatenDropdown = By.cssSelector("//*contains(text(),'persönlichen')]/following-sibling::div");
+    // "содержит текст и клик на следующего брата этого элемента", нам не подходил "customerData__headerText" на странице 4 шт.
     private static By editBtn = By.id(".personalBtn");
+    private static By saveBtn = By.id(".submitPersonalData");
     private static By firstName = By.id(".firstName");
     private static By lastName = By.id(".lastName");
-    private static By saveBtn = By.id(".submitPersonalData");
     private static By fullName = By.id(".fullName");
 
-    public SelenideElement dataHeader() {
-        return $(ihreKundendatenText);
+    public SelenideElement getHeader() {
+        return $(ihreKundendatenHeader);
     }
 
-    public void clickOnDataDetails() {
-        $(ihrePersönlichenDatenText).shouldHave(text("Ihre persönlichen Daten"));
-        $(detailsAnzeigenBtn).click();
+    public void clickOnPersonDataDetails() {
+        $(persönlichenDatenDropdown).click();
     }
 
-    public void clickOnDataEdit() {
+    public void clickOnDataEditBtn() {
         $(editBtn).click();
+    }
+
+    public SelenideElement getSaveBtn() {
+        return $(saveBtn);
     }
 
     public void editName(String name) {
@@ -52,8 +54,8 @@ public class PersonalInfoP {
     }
 
     public void backToNormal() {
-        clickOnDataDetails();
-        clickOnDataEdit();
+        clickOnPersonDataDetails();
+        clickOnDataEditBtn();
         $(firstName).setValue("Violetta");
         $(lastName).setValue("Abramova");
         clickSaveBtn();
